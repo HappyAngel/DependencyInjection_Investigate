@@ -1,11 +1,17 @@
-package DIExample;
+package AutoDI;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 /**
- * Created by LeiXi on 2017/10/10.
+ * Created by happyangel on 2017/10/10.
  */
+
+@Component
 public class MovieLister {
     private MovieFinder finder;
 
+    @Autowired
     public MovieLister(MovieFinder finder) {
         this.finder = finder;
     }

@@ -1,14 +1,19 @@
-import DIExample.MovieLister;
+import AutoDI.AudoDIConfig;
+import AutoDI.MovieLister;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * Created by LeiXi on 2017/10/10.
+ * Created by happyangel on 2017/10/10.
  */
+
 public class Main {
+
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("movie.xml");
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AudoDIConfig.class);
         MovieLister lister = context.getBean(MovieLister.class);
         lister.showMovies();
         context.close();
     }
 }
+
