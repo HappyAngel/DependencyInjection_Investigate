@@ -1,7 +1,3 @@
-package AutoDI;
-
-import org.springframework.stereotype.Component;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -12,10 +8,9 @@ import java.util.List;
 /**
  * Created by happyangel on 2017/10/14.
  */
-@Component
 public class FileMovieFinder implements MovieFinder {
     public List<String> findAll() {
-        File file = new File("src/main/resources/movies.txt");
+        File file = new File("GuiceDI/src/main/resources/movies.txt");
         BufferedReader reader = null;
         List<String> strList = new ArrayList();
         try {
